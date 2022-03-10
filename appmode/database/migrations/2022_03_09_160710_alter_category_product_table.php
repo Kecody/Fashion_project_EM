@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-     $table->unsignedBigInteger('category_id');
-     $table->unsignedBigInteger('product_id');
-     $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-     $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+     Schema::table('category_product', function(Blueprint $table) {
+        $table->unsignedBigInteger('category_id');
+        $table->unsignedBigInteger('product_id');
+        $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+        $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+        });
     }
 
     /**
@@ -26,6 +28,9 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('category_product', function (Blueprint $table) {
+            $table->dropForeign('category_product_id_foreign');
+            $table->dropColumn('product_id');          //
+        });
     }
 };
