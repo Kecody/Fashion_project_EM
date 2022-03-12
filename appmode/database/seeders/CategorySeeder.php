@@ -19,36 +19,15 @@ class CategorySeeder extends Seeder
         $category = new Category;
         $category->name = Str::random(10);
         $category->description = Str::random(30);
-        $category->sex = random_int(0,1) ? "Homme" : "Femme";
-        $category->save;
+        $category->sex = random_int(0,1) ? "homme" : "femme";
+        $category->save();
 
 
         $category = new Category;
         $category->name = Str::random(10);
         $category->description = Str::random(30);
-        $category->sex = random_int(0,1) ? "Homme" : "Femme";
-        $category->save;
-
-        
-        $category = new Category;
-        $category->name = Str::random(10);
-        $category->description = Str::random(30);
-        $category->sex = random_int(0,1) ? "Homme" : "Femme";
-        $category->save;
-
-
-        $category = new Category;
-        $category->name = Str::random(10);
-        $category->description = Str::random(30);
-        $category->sex = random_int(0,1) ? "Homme" : "Femme";
-        $category->save;
-
-
-        $category = new Category;
-        $category->name = Str::random(10);
-        $category->description = Str::random(30);
-        $category->sex = random_int(0,1) ? "Homme" : "Femme";
-        $category->save;
+        $category->sex = random_int(0,1) ? "homme" : "femme";
+        $category->save();
 
     }
 }
