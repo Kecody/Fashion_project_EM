@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->text('visibilité');
-            $table->string('état');
-            $table->string('référence');
+            $table->text('visibility');
+            $table->string('condition');
+            $table->string('reference');
             $table->decimal('price' , 5, 2)->nullable();
             $table->timestamps();
             
